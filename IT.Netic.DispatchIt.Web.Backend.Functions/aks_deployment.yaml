@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webportalbackendapi
+  name: webportalbackendapi
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webportalbackendapi
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: webportalbackendapi
+        actorSystemName: webportalbackendapi
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: webportalbackendapi
+        image: itneticdispatchitacr.azurecr.io/webportal-backend:@@Image.Tag@@
+        imagePullPolicy: Always
+        ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+            memory: 1200Mi
+        env:
+        - name: LAP
+          value: "webportalbackendapi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webportalbackendapi
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: webportalbackendapi

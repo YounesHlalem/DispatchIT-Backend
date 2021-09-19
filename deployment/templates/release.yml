@@ -1,0 +1,32 @@
+parameters:
+  AzureSubscription: ""
+  SourceCommit: ""
+  SourceBranch: ""
+steps:
+  - download: none
+  #### Download Artifacts ####
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download files'
+    inputs:
+      buildType: 'current'
+      downloadType: 'specific'
+      artifactName: 'WebportalBackendFunctions'
+      downloadPath: '$(System.DefaultWorkingDirectory)'
+  #### Set Source ACR Image in deployment yaml ####
+  - task: PowerShell@2
+    displayName: Replace ACR Image
+    inputs:
+      targetType: 'filePath'
+      filePath: '$(System.DefaultWorkingDirectory)/WebportalBackendFunctions/deployment/scripts/DevOps_Replace_Tokens.ps1'
+      arguments: '-filePath $(System.DefaultWorkingDirectory)/WebportalBackendFunctions/IT.Netic.DispatchIt.Web.Backend.Functions/aks_deployment.yaml -replacementConfig "[{""token"":""Image.Tag"",""value"":""${{ parameters.SourceBranch }}-${{ parameters.SourceCommit }}""}]"'
+  #### Deploy to Kubernetes ####
+  - task: Kubernetes@1
+    displayName: Deploy to AKS
+    inputs:
+      connectionType: Azure Resource Manager
+      azureSubscriptionEndpoint: ${{ parameters.AzureSubscription }}
+      azureResourceGroup: 'itneticdispatchitrgweu'
+      kubernetesCluster: 'dispatchit-dev-weu-kcl'
+      command: apply
+      useConfigurationFile: true
+      configuration: '$(System.DefaultWorkingDirectory)/WebportalBackendFunctions/IT.Netic.DispatchIt.Web.Backend.Functions/aks_deployment.yaml'

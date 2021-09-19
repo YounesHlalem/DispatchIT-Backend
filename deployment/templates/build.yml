@@ -1,0 +1,46 @@
+parameters:
+  AzureSubscription: ""
+  ContainerRegistryConnection: ""
+  SourceCommit: ""
+  SourceBranch: ""
+steps:
+  - download: none
+  #### Download Artifacts ####
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Backend files'
+    inputs:
+      buildType: 'current'
+      downloadType: 'specific'
+      artifactName: 'WebportalBackendFunctions'
+      downloadPath: '$(System.DefaultWorkingDirectory)'
+  #### Login to ACR ####
+  - task: Docker@2
+    displayName: Login to ACR
+    inputs:
+      command: login
+      containerRegistry: ${{ parameters.ContainerRegistryConnection }}
+  #### Build image ####
+  - task: Docker@2
+    displayName: "Build & Tag image"
+    inputs:
+      command: build
+      containerRegistry: ${{ parameters.ContainerRegistryConnection }}
+      repository: webportal-backend
+      Dockerfile: $(System.DefaultWorkingDirectory)/WebportalBackendFunctions/Dockerfile
+      tags: ${{ parameters.SourceBranch }}-${{ parameters.SourceCommit }}
+      addPipelineData: false
+  #### Push image ####
+  - task: Docker@2
+    displayName: "Push image"
+    inputs:
+      command: push
+      containerRegistry: ${{ parameters.ContainerRegistryConnection }}
+      repository: webportal-backend
+      tags: ${{ parameters.SourceBranch }}-${{ parameters.SourceCommit }}
+      addPipelineData: false
+  #### Logout of ACR ####
+  - task: Docker@2
+    displayName: "Logout of ACR"
+    inputs:
+      command: logout
+      containerRegistry: ${{ parameters.ContainerRegistryConnection }}

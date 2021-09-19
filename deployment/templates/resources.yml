@@ -1,0 +1,19 @@
+jobs:
+  - job: CopyFiles
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      #### Copy files ####
+      - task: CopyFiles@2
+        displayName: Copy files
+        inputs:
+          sourceFolder: $(solutionDirectory)
+          contents: "**"
+          targetFolder: "$(Build.ArtifactStagingDirectory)/WebportalBackendFunctions"
+          cleanTargetFolder: true
+      - task: PublishBuildArtifacts@1
+        displayName: "Functions: Publish Artifact"
+        inputs:
+          pathtoPublish: "$(Build.ArtifactStagingDirectory)/WebportalBackendFunctions"
+          artifactName: "WebportalBackendFunctions"
+          publishLocation: "Container"

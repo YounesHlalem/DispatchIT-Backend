@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.Azure.EventGrid" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.Common\IT.Netic.DispatchIt.Web.Backend.Common.csproj" />
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.DataContracts\IT.Netic.DispatchIt.Web.Backend.DataContracts.csproj" />
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.Domain\IT.Netic.DispatchIt.Web.Backend.Domain.csproj" />
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.Services\IT.Netic.DispatchIt.Web.Backend.Services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>

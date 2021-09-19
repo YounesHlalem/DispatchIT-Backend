@@ -1,0 +1,61 @@
+name: DispatchIt.Web.Backend.$(Rev:r)
+trigger:
+  branches:
+    include:
+      - development
+      - master
+
+variables:
+  solutionDirectory: $(Build.SourcesDirectory)/IT.Netic.DispatchIt.Web.Backend
+  Release.ReleaseName: $(Build.BuildNumber)
+  Release.ReleaseWebUrl: $(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)&view=results
+  Release.SourceCodeBranch: $(Build.SourceBranchName)
+  Release.CommitNumber: $(Build.SourceVersion)
+  Release.Deployment.RequestedFor: $(Build.RequestedFor)
+  Release.Reason: $(Build.Reason)
+stages:
+  - stage: Resources
+    displayName: Get backend files
+    jobs:
+      - template: templates/resources.yml
+
+  - stage: BuildAndPush
+    displayName: Docker build and push image to ACR
+    dependsOn: [Resources]
+    condition: succeeded('Resources')
+    jobs:
+      - deployment: ACR
+        displayName: Build and Push Container Image to ACR
+        pool:
+          vmImage: "ubuntu-latest"
+        environment: ACR
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: templates/build.yml
+                  parameters:
+                    AzureSubscription: 'AzureIntegrationTeam'
+                    ContainerRegistryConnection: 'DispatchItAcrConnection'
+                    SourceCommit: '$(Release.CommitNumber)'
+                    SourceBranch: '$(Release.SourceCodeBranch)'
+  - stage: DEV
+    displayName: Release Image to DEV
+    dependsOn: [BuildAndPush]
+    condition: succeeded('BuildAndPush')
+    jobs:
+      - deployment: DEV
+        displayName: Release Image to DEV
+        pool:
+          vmImage: "ubuntu-latest"
+        environment: DEV
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: templates/release.yml
+                  parameters:
+                    AzureSubscription: 'AzureIntegrationTeam'
+                    SourceCommit: '$(Release.CommitNumber)'
+                    SourceBranch: '$(Release.SourceCodeBranch)'
+

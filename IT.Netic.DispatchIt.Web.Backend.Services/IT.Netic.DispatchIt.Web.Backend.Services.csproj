@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <_FunctionsSkipCleanOutput>true</_FunctionsSkipCleanOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.Azure.EventGrid" Version="3.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.Common\IT.Netic.DispatchIt.Web.Backend.Common.csproj" />
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.DataContracts\IT.Netic.DispatchIt.Web.Backend.DataContracts.csproj" />
+    <ProjectReference Include="..\IT.Netic.DispatchIt.Web.Backend.Domain\IT.Netic.DispatchIt.Web.Backend.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

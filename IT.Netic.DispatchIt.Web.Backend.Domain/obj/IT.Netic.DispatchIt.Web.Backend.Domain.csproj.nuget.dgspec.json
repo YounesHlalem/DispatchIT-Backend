@@ -1,0 +1,166 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Domain\\IT.Netic.DispatchIt.Web.Backend.Domain.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Common\\IT.Netic.DispatchIt.Web.Backend.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Common\\IT.Netic.DispatchIt.Web.Backend.Common.csproj",
+        "projectName": "IT.Netic.DispatchIt.Web.Backend.Common",
+        "projectPath": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Common\\IT.Netic.DispatchIt.Web.Backend.Common.csproj",
+        "packagesPath": "C:\\Users\\Younes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Younes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Domain\\IT.Netic.DispatchIt.Web.Backend.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Domain\\IT.Netic.DispatchIt.Web.Backend.Domain.csproj",
+        "projectName": "IT.Netic.DispatchIt.Web.Backend.Domain",
+        "projectPath": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Domain\\IT.Netic.DispatchIt.Web.Backend.Domain.csproj",
+        "packagesPath": "C:\\Users\\Younes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Younes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Common\\IT.Netic.DispatchIt.Web.Backend.Common.csproj": {
+                "projectPath": "C:\\Users\\Younes\\Desktop\\Projects\\1. DispatchIT\\IT.Netic.DispatchIt.Web.Backend\\IT.Netic.DispatchIt.Web.Backend.Common\\IT.Netic.DispatchIt.Web.Backend.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.12.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.12.1, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

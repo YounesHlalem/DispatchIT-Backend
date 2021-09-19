@@ -1,0 +1,9 @@
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\bin\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.deps.json
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\bin\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.dll
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\bin\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.pdb
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\obj\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.csprojAssemblyReference.cache
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\obj\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.AssemblyInfoInputs.cache
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\obj\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.AssemblyInfo.cs
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\obj\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.csproj.CoreCompileInputs.cache
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\obj\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.dll
+C:\Users\Younes\Downloads\DispatchIT\IT.Netic.DispatchIt.Web.Backend\IT.Netic.DispatchIt.Web.Backend.DataContracts\obj\Debug\netcoreapp3.1\IT.Netic.DispatchIt.Web.Backend.DataContracts.pdb
