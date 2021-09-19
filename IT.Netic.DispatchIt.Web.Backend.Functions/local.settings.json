@@ -1,0 +1,23 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+  },
+  "ConnectionStrings": {
+    "CosmosDbUserName": "...-dispatchit-nosqldata",
+    "CosmosDbHost": "...-nosqldata.mongo.cosmos.azure.com",
+    "CosmosDbPassword": "-",
+    "SqlServerName": "...dispatchit-mysql.mysql.database.azure.com",
+    "SqlDatabaseName": "dispatchit",
+    "SqlUserName": "dispatchit@....",
+    "SqlPassword": "-",
+    "EventHubName": "dispatchit-eventhub",
+    "EventHubConnectionString": "Endpoint=sb://....servicebus.windows.net/;SharedAccessKeyName=...;SharedAccessKey=...",
+    "TopicEndpoint": "https://.....eventgrid.azure.net/api/events",
+    "TopicKey": "-",
+    "Instance": "https://login.microsoftonline.com/",
+    "TenantId": "-",
+    "ClientId": "-"
+  }
+}
